@@ -32,7 +32,6 @@ class Generator():
             
             generated_password = capital_letters + lowercase_letters + numbers + symbols
             
-            self.generated_password_list.append(generated_password)
         elif password_type == "medium":
             capital_letters = random.choices(string.ascii_uppercase, k = 2)
             lowercase_letters = random.choices(string.ascii_lowercase, k = 4)
@@ -41,7 +40,6 @@ class Generator():
             
             generated_password = capital_letters + lowercase_letters + numbers + symbols
             
-            self.generated_password_list.append(generated_password)
         elif password_type == "long":
             capital_letters = random.choices(string.ascii_uppercase, k = 3)
             lowercase_letters = random.choices(string.ascii_lowercase, k = 5)
@@ -50,10 +48,11 @@ class Generator():
             
             generated_password = capital_letters + lowercase_letters + numbers + symbols
             
-            self.generated_password_list.append(generated_password)
         else:
             print("You must input 'short', 'medium', or 'long' into the generate function")
             
         pass_str = ''.join(generated_password)
+        
+        self.generated_password_list.append(pass_str)
         
         return pass_str
