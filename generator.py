@@ -54,6 +54,6 @@ class Generator():
         else:
             print("You must input 'short', 'medium', or 'long' into the generate function")
             
-        pass_str = str(generated_password)
+        pass_str = ''.join(generated_password)
         
         return pass_str
