@@ -1,6 +1,6 @@
 import string
 import random
-#import sys
+import sys
 import argparse
 
 """
@@ -16,7 +16,7 @@ class Password():
 class Checker():
     pass
 class Generator():
-    def __init__(self, generated_password_list):
+    def __init__(self):
         #Another class that has not been completed/worked on yet
         self.generated_password_list = []
         
@@ -56,3 +56,19 @@ class Generator():
         self.generated_password_list.append(pass_str)
         
         return pass_str
+
+def main():
+    user_data = int(input("Select option to use our program \n 1. Store Password \n 2. Check Password \n 3. Generate Password: "))
+    
+    newGen = Generator()
+    
+    if user_data == 1:
+        pass
+    if user_data == 2:
+        pass
+    if user_data == 3:
+        testNewGen = newGen.generate(input("Enter password type (short, medium, long): "))
+        print("Your generated password is " + testNewGen)
+
+if __name__ == '__main__':
+    main()
