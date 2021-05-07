@@ -1,4 +1,4 @@
-""" Pytest for get_cost() """
+""" Pytest for password.py """
 
 """
 Names: Nicholas Rudiger, Michael Kwakye
