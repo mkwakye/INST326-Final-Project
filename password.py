@@ -12,15 +12,40 @@ Members: Aaron Methratta
 
 """
 class Password():
+    """
+    This class will take in passwords from the user's input and 
+    store them into a list of passwords. The method "pass_length"
+    will return the length of the list.
+    """
     pass
 class Checker():
+    """
+    This class will check the passwords given and indicate whether
+    they are valid or not. 
+    """
     pass
 class Generator():
+    """
+    This class will generate random passwords for the user, using
+    the "generate" method to accomplish this.
+    """
     def __init__(self):
-        #Another class that has not been completed/worked on yet
+        """
+        The __init__() will store passwords created from generate()
+        method into a list.
+        """
         self.generated_password_list = []
         
     def generate(self, password_type):
+        """
+        The generate() method take in a value "password_type", which is
+        a string that represent how long the password will be based on
+        input (short, medium, long). Depending on the answer, a password 
+        will be generated using capital letters, lowercase letters, numbers
+        and sybmols. Once this is done, the complete password will be stored
+        into "generated_password", which is then appended to the list
+        created in the __init__()
+        """
         symbols_list = "$%_+*)#^!(&@"
         generated_password = ""
         
@@ -58,6 +83,12 @@ class Generator():
         return pass_str
 
 def main():
+    """
+    The main function will display a prompt for the user to select what function they
+    want to use. Based on their selection (1,2 or 3), the program will either
+    store a passed in password using the Password class, check a passed in password
+    using the Checker class, or generate a random password using the Generator class.
+    """
     user_data = int(input("Select option to use our program \n 1. Store Password \n 2. Check Password \n 3. Generate Password: "))
     
     newGen = Generator()
@@ -71,4 +102,7 @@ def main():
         print("Your generated password is " + testNewGen)
 
 if __name__ == '__main__':
+    """
+    This class calls the main() method to execute the prompt/commands for our program.
+    """
     main()
