@@ -100,6 +100,8 @@ def main():
     if user_data == 3:
         testNewGen = newGen.generate(input("Enter password type (short, medium, long): "))
         print("Your generated password is " + testNewGen)
+    else:
+        print("You must enter 1, 2 or 3")
 
 if __name__ == '__main__':
     """
