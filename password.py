@@ -4,7 +4,7 @@ import sys
 import argparse
 
 """
-Assignment: Final Project Class 3
+Assignment: Final Project
 
 Members: Aaron Methratta
          Michael Kwakye
