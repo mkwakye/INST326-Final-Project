@@ -67,9 +67,9 @@ class TestPassword(unittest.TestCase):
         lg = 0
         
         #TEST 1
-        self.assertEqual(len(newGen.generate("short")), 8)
-        self.assertEqual(len(newGen.generate("medium")), 12)
-        self.assertEqual(len(newGen.generate("long")), 16)
+        self.assertEqual(len(newShort), 8)
+        self.assertEqual(len(newMedium), 12)
+        self.assertEqual(len(newLong), 16)
         
         #TEST 2
         while st < 4: 
