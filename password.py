@@ -38,6 +38,11 @@ class Generator():
         
     def generate(self, password_type):
         """
+        Agrs:
+            password_type (string): A string representing the user's input
+            for password (short, medium or long)
+
+            
         The generate() method take in a value "password_type", which is
         a string that represent how long the password will be based on
         input (short, medium, long). Depending on the answer, a password 
@@ -45,6 +50,9 @@ class Generator():
         and sybmols. Once this is done, the complete password will be stored
         into "generated_password", which is then appended to the list
         created in the __init__()
+        
+        Return:
+            pass_str (string): String containing the randomly generated password
         """
         symbols_list = "$%_+*)#^!(&@"
         generated_password = ""
