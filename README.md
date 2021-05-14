@@ -11,8 +11,10 @@ each one with their own set of features.
 
 Here is a breakdown of the different options and their output:
 
-Option 1) Dictionary with password number and password value, list of stored passwords
-Option 2) Information about contents of a password being checked, frequency of symbols, capital letters, lowercase letters and digits
-Option 3) Randomly generates passwords that are valid based on the criteria we have established for our program
+Option 1) Dictionary with password number and password value, list of stored passwords.
+
+Option 2) Information about contents of a password being checked, frequency of symbols, capital letters, lowercase letters and digits.
+
+Option 3) Randomly generates passwords that are valid based on the criteria we have established for our program.
 
 [Criteria for valid password: Has more than 8 characters & contains capital letters, numbers and symbols]
