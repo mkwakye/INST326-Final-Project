@@ -10,6 +10,7 @@ Members: Aaron Methratta
 
 import unittest
 import password as pw
+import string
 
 class TestPassword(unittest.TestCase):
     """
@@ -44,15 +45,58 @@ class TestPassword(unittest.TestCase):
         cases in the Checker class within the password program
         
         TEST 1:
-            Tests the type of the variable being passed into the Checker() class
-            to verify that it is a string.
+            Tests a good password being passed into the Checker() class
+            to verify that it is returning the correct output.
+            
+        TEST 2:
+            Tests a bad password being passed into the Checker() class
+            to verify that it is returning the correct output.
+            
+        TEST 3:
+            Tests the code used within the display_frequency() method
+            to verify that the function is displaying the correct number
+            of symbols, capital letters, lowercase letters and digits.
+
         """
-        tryPassword = "p01x@"
         
+        tryPassword = "Pkp01x@!!"
+        
+        #TEST 1
         newCheckOne = pw.Checker(tryPassword)
         wordCheck = newCheckOne.word_check()
         
-        self.assertEqual(type(tryPassword), str)
+        self.assertEqual(wordCheck, print("\nThis password is valid to use!"))
+        
+        #TEST 2
+        badPassword = "carrotcake"
+        
+        newCheckOne = pw.Checker(badPassword)
+        wordCheck = newCheckOne.word_check()
+        
+        self.assertEqual(wordCheck, print("\nThis password is not valid!"))
+        
+        #TEST 3
+        symbols_list = "$%_+*)#^!(&@"
+        
+        symbolCount = 0
+        capitalCount = 0
+        lowerCount = 0
+        numCount = 0
+        
+        for x in tryPassword:
+            if x in symbols_list:
+                symbolCount+=1
+            elif x in string.ascii_uppercase:
+                capitalCount+=1
+            elif x in string.ascii_lowercase:
+                lowerCount+=1
+            elif x in string.digits:
+                numCount+=1
+                
+        self.assertEqual(symbolCount, 3)
+        self.assertEqual(capitalCount, 1)
+        self.assertEqual(lowerCount, 3)
+        self.assertEqual(numCount, 2)
 
     def test_generate(self):
         """ 
