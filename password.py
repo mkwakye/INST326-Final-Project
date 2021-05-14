@@ -120,8 +120,10 @@ class Checker(Password):
             reNums.search(self.tryPassword) and 
             len(self.tryPassword) >= 8):
             
-            print("\nThis password is valid to use!")
             self.good_passwords_list.append(self.tryPassword)
+            return print("\nThis password is valid to use!")
+        else:
+            return print("\nThis password is not valid!")
         
         
     def display_frequency(self):
