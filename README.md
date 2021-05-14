@@ -17,4 +17,4 @@ Option 2) Information about contents of a password being checked, frequency of s
 
 Option 3) Randomly generates passwords that are valid based on the criteria we have established for our program.
 
-[Criteria for valid password: Has more than 8 characters & contains capital letters, numbers and symbols]
+[Criteria for valid password: Has 8 or more characters & contains capital letters, numbers and symbols]
