@@ -1,6 +1,4 @@
-import string
-import random
-import re
+"""Python program which will store passwords, check passwords and generate passwords"""
 
 """
 Assignment: Final Project
@@ -10,6 +8,12 @@ Members: Aaron Methratta
          Biruk Tamiru
 
 """
+
+import string
+import random
+import re
+
+
 class Password():
     """
     This class, Password(), will take in a password entered by the user
@@ -70,6 +74,7 @@ class Checker(Password):
     """
     Agrs:
         tryPassword: User's input for the password they want to check
+        
     This class Checker() will check the passwords given and indicate whether
     they are valid or not. 
     """
@@ -79,10 +84,18 @@ class Checker(Password):
         
         #An empty list that will store passwords that pass the check
         self.good_passwords_list = []
+        #The parameter for the password (tryPassword) being checked set to the attribute "tryPassword"
         self.tryPassword = tryPassword
         
     def word_check(self):
         """
+        This password checks both the length of a password being passed in and the contents of the password.
+        If the password inputted contains symbols, capital letters, digits and is more than 8 characters long,
+        a print statement saying the password is valid will be returned. Otherwise, a print staying saying it
+        is not value will be returned.
+        
+        Returns:
+            A print statement indicating whether or not the user's password is valid or not
         """
         reSymbols = re.compile('[^0-9a-zA-Z]+')
         reLetters = re.compile('[A-Z]+')
@@ -128,6 +141,13 @@ class Checker(Password):
         
     def display_frequency(self):
         """
+        This method will display the frequency of symbols, lowercase, uppercase
+        and digit characters within the string "tryPassword", the parameter passed into
+        Checker(). 
+        
+        Return:
+            frequency (string): String containing the frequency of symbols, lowercase, uppercase
+            ad digit characters within a password.
         """
         #Will store the good password into the appropriate list
         
@@ -229,6 +249,15 @@ def main():
     want to use. Based on their selection (1,2 or 3), the program will either
     store a passed in password using the Password class, check a passed in password
     using the Checker class, or generate a random password using the Generator class.
+    
+    Returns:
+        print statements that vary depending on the option selected
+        
+        INFO: Option 1) Dictionary with password number and password value, list of stored passwords
+              Option 2) Information about contents of a password being checked, frequency of symbols,
+                        capital letters, lowercase letters and digits
+              Option 3) Randomly generated passwords that are valid based on the criteria we have
+                        established for our program
     """
     user_data = int(input("Select option to use our program \n 1. Store Password \n 2. Check Password \n 3. Generate Password: "))
     
