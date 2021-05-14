@@ -85,7 +85,7 @@ class Checker(Password):
         """
         """
         reSymbols = re.compile('[^0-9a-zA-Z]+')
-        reDigits = re.compile('[A-Z]+')
+        reLetters = re.compile('[A-Z]+')
         reNums = re.compile('[0-9]+')
         
         #Will test
@@ -104,7 +104,7 @@ class Checker(Password):
         else:
             print("This password does not contain special characters")
         #Checks to see if the password contains a capital letter
-        if reSymbols.search(self.tryPassword):
+        if reLetters.search(self.tryPassword):
             print("This password contains capital letters")
         else:
             print("This password does not contain capital letters")
@@ -115,21 +115,43 @@ class Checker(Password):
             print("This password does not contain numbers")
             
         #Will print this message if all three conditions for a valid password have been satisfied
-        if reSymbols.search(self.tryPassword) and reSymbols.search(self.tryPassword) and reNums.search(self.tryPassword) and len(self.tryPassword) > 8:
+        if (reSymbols.search(self.tryPassword) and 
+            reLetters.search(self.tryPassword) and 
+            reNums.search(self.tryPassword) and 
+            len(self.tryPassword) >= 8):
+            
             print("\nThis password is valid to use!")
             self.good_passwords_list.append(self.tryPassword)
         
         
-    def display_good_password(self):
+    def display_frequency(self):
         """
         """
         #Will store the good password into the appropriate list
-        goodPass = []
         
-        for x in self.good_passwords_list:
-            goodPass.append(x)
+        symbols_list = "$%_+*)#^!(&@"
         
-        return goodPass
+        symbolCount = 0
+        capitalCount = 0
+        lowerCount = 0
+        numCount = 0
+        
+        for x in self.tryPassword:
+            if x in symbols_list:
+                symbolCount+=1
+            elif x in string.ascii_uppercase:
+                capitalCount+=1
+            elif x in string.ascii_lowercase:
+                lowerCount+=1
+            elif x in string.digits:
+                numCount+=1
+                
+        frequency = ("\nNumber of symbols: " + str(symbolCount) + 
+                     "\nNumber of capitals: " + str(capitalCount) + 
+                     "\nNumber of lowercase: " + str(lowerCount) + 
+                     "\nNumber of digits:" + str(numCount))
+        
+        return frequency
         
         
 class Generator(Password):
@@ -225,16 +247,13 @@ def main():
             print("\nPASSWORDS LIST: \n \n", displayPass)
         
     elif user_data == 2:
-        length_good = int(input("How many passwords do you want to check? (Numeric): "))
+        newCheck = Checker(input("Enter the password you wish to check: "))
+        wordCheck = newCheck.word_check()
         
-        for x in range(length_good):
-            newCheck = Checker(input("Enter the password you wish to check: "))
-            wordCheck = newCheck.word_check()
-        
-        viewGood = input("\nDo you want to view your good passwords? (Yes or No): ")
+        viewGood = input("\nDo you want to view the breakdown of your password (Yes or No): ")
         
         if viewGood == "Yes" or viewGood == "yes":
-            displayGoodPass = newCheck.display_good_password()
+            displayGoodPass = newCheck.display_frequency()
             print(displayGoodPass)
         
 
