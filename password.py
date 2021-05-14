@@ -68,7 +68,9 @@ class Password():
 
 class Checker(Password):
     """
-    This class will check the passwords given and indicate whether
+    Agrs:
+        tryPassword: User's input for the password they want to check
+    This class Checker() will check the passwords given and indicate whether
     they are valid or not. 
     """
     def __init__(self, tryPassword):
@@ -122,7 +124,10 @@ class Checker(Password):
         """
         """
         #Will store the good password into the appropriate list
-        goodPass = self.good_passwords_list
+        goodPass = []
+        
+        for x in self.good_passwords_list:
+            goodPass.append(x)
         
         return goodPass
         
