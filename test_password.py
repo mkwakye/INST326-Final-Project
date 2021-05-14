@@ -22,16 +22,37 @@ class TestPassword(unittest.TestCase):
     def test_store(self):
         """ 
         function that tests some
-        cases in the Store class within the password program
+        cases in the Password class within the password program
+        
+        TEST 1: 
+            Determine whether or not the object being returned from the
+            store_password() method is a dictionary
+            
+            INFO: This test will create an instance of the Password class
+                and call the store_password() method
         """
-        pass
+        newPass = pw.Password()
+        
+        testPass = newPass.store_password("Password123!@#")
+        
+        #TEST 1
+        self.assertEqual(type(testPass), dict)
         
     def test_checker(self):
         """ 
         function that tests some
         cases in the Checker class within the password program
+        
+        TEST 1:
+            Tests the type of the variable being passed into the Checker() class
+            to verify that it is a string.
         """
-        pass
+        tryPassword = "p01x@"
+        
+        newCheckOne = pw.Checker(tryPassword)
+        wordCheck = newCheckOne.word_check()
+        
+        self.assertEqual(type(tryPassword), str)
 
     def test_generate(self):
         """ 
