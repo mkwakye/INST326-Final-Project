@@ -259,7 +259,7 @@ def main():
               Option 3) Randomly generated passwords that are valid based on the criteria we have
                         established for our program
     """
-    user_data = int(input("Select option to use our program \n 1. Store Password \n 2. Check Password \n 3. Generate Password: "))
+    user_data = int(input("Select option (1, 2 or 3) to use our program \n 1. Store Password \n 2. Check Password \n 3. Generate Password: "))
     
     newPass = Password()
     newGen = Generator()
